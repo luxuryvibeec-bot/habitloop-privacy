@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — HabitLoop</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f2eb;
+      --ink: #1a1a18;
+      --accent: #2e6fd4;
+      --accent-light: #dce8f8;
+      --muted: #6b6b68;
+      --border: #dedad4;
+      --card: #ffffff;
+      --tag-bg: #e8f0fc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 60px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, #2e6fd420 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff12;
+      border: 1px solid #ffffff20;
+      border-radius: 100px;
+      padding: 6px 16px 6px 8px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+    }
+    .app-icon {
+      width: 28px; height: 28px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .subtitle {
+      color: #ffffffaa;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── META BAR ── */
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+      margin-top: 48px;
+    }
+    .meta-tag {
+      font-size: 12px;
+      font-weight: 500;
+      background: var(--tag-bg);
+      color: var(--accent);
+      border-radius: 100px;
+      padding: 4px 14px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 52px;
+      animation: fadeUp 0.5s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section:nth-child(1) { animation-delay: 0.05s; }
+    .section:nth-child(2) { animation-delay: 0.10s; }
+    .section:nth-child(3) { animation-delay: 0.15s; }
+    .section:nth-child(4) { animation-delay: 0.20s; }
+    .section:nth-child(5) { animation-delay: 0.25s; }
+    .section:nth-child(6) { animation-delay: 0.30s; }
+    .section:nth-child(7) { animation-delay: 0.35s; }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .icon {
+      width: 32px; height: 32px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    p { color: #3a3a38; margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px #0000000a;
+    }
+    .data-table th {
+      background: var(--ink);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .data-table td {
+      background: var(--card);
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border);
+      color: #3a3a38;
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: #fafafa; }
+    .yes { color: #1a7a4a; font-weight: 500; }
+    .no  { color: var(--muted); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #1a3a6b;
+    }
+
+    /* ── DELETE SECTION ── */
+    .delete-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 16px;
+    }
+    .delete-box h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 26px; height: 26px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step p { margin: 0; font-size: 15px; }
+
+    /* ── CONTACT ── */
+    .contact-card {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 16px;
+    }
+    .contact-card p { color: #ffffffcc; margin-bottom: 8px; }
+    .contact-card a { color: #7eb3ff; text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 560px) {
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-badge">
+    <span class="app-icon">🔁</span>
+    HabitLoop
+  </div>
+  <h1>Política de<br><em>Privacidad</em></h1>
+  <p class="subtitle">Última actualización: febrero 2025 · Desarrollado por HuroApps</p>
+</header>
+
+<div class="container">
+
+  <div class="meta-bar">
+    <span class="meta-tag">Android</span>
+    <span class="meta-tag">Firebase Anónimo</span>
+    <span class="meta-tag">Sin registro obligatorio</span>
+    <span class="meta-tag">GDPR</span>
+    <span class="meta-tag">CCPA</span>
+  </div>
+
+  <!-- 1 -->
+  <div class="section">
+    <h2><span class="icon">📋</span> Información general</h2>
+    <p>Esta política de privacidad describe cómo <strong>HuroApps</strong> recopila, usa y protege la información de los usuarios de la aplicación <strong>HabitLoop</strong> (disponible en Google Play como <em>com.HuroApps.habitos</em>).</p>
+    <p>Al usar HabitLoop, aceptas los términos descritos en esta política. Si no estás de acuerdo, por favor deja de usar la aplicación.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="section">
+    <h2><span class="icon">🗄️</span> Datos que recopilamos</h2>
+    <p>HabitLoop recopila únicamente los datos necesarios para su funcionamiento. A continuación se detalla cada tipo:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Tipo de dato</th>
+          <th>¿Se recopila?</th>
+          <th>¿Se comparte?</th>
+          <th>Propósito</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ID anónimo de Firebase</td>
+          <td class="yes">Sí</td>
+          <td class="no">No</td>
+          <td>Sincronizar datos en la nube (usuarios VIP)</td>
+        </tr>
+        <tr>
+          <td>Nombre de usuario elegido</td>
+          <td class="yes">Sí</td>
+          <td class="yes">Solo con amigos añadidos</td>
+          <td>Función social (amigos y retos)</td>
+        </tr>
+        <tr>
+          <td>Datos de hábitos, metas y retos</td>
+          <td class="yes">Sí</td>
+          <td class="yes">Solo con amigos añadidos</td>
+          <td>Funcionalidad principal de la app y backup VIP</td>
+        </tr>
+        <tr>
+          <td>Historial de compras (VIP)</td>
+          <td class="yes">Sí</td>
+          <td class="yes">RevenueCat / Google Play</td>
+          <td>Verificar y gestionar la suscripción VIP</td>
+        </tr>
+        <tr>
+          <td>ID de publicidad de Android</td>
+          <td class="yes">Sí</td>
+          <td class="yes">Google AdMob</td>
+          <td>Mostrar anuncios relevantes (usuarios no VIP)</td>
+        </tr>
+        <tr>
+          <td>Versión de la app e interacciones</td>
+          <td class="yes">Sí</td>
+          <td class="yes">Firebase / RevenueCat</td>
+          <td>Diagnóstico técnico y analítica básica</td>
+        </tr>
+        <tr>
+          <td>Ubicación física</td>
+          <td class="no">No</td>
+          <td class="no">No</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Email, teléfono, contraseña</td>
+          <td class="no">No</td>
+          <td class="no">No</td>
+          <td>No se requiere registro</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3 -->
+  <div class="section">
+    <h2><span class="icon">🔐</span> Cómo protegemos tus datos</h2>
+    <div class="highlight">
+      Todos los datos transmitidos entre la app y nuestros servidores están <strong>encriptados en tránsito mediante HTTPS/TLS</strong>. Los datos almacenados en Firebase Firestore están protegidos por las reglas de seguridad de Firebase.
+    </div>
+    <p>La app usa <strong>autenticación anónima de Firebase</strong>: no necesitas crear una cuenta ni proporcionar un email o contraseña. Se genera automáticamente un ID aleatorio que no está vinculado a ningún dato personal identificable.</p>
+    <p>El acceso a los datos en Firestore está restringido por reglas que garantizan que cada usuario solo puede leer y escribir sus propios datos.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="section">
+    <h2><span class="icon">👥</span> Función social</h2>
+    <p>HabitLoop incluye funciones sociales opcionales. Si decides usarlas:</p>
+    <p>Tu nombre de usuario y estadísticas de hábitos (racha general, hábitos completados) serán visibles para los amigos que hayas añadido mediante tu código de amigo. Esta información <strong>no es pública</strong> — solo la ven los contactos que tú hayas aceptado explícitamente.</p>
+    <p>No compartimos esta información con terceros ni con otros usuarios que no sean tus amigos directos en la app.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="section">
+    <h2><span class="icon">📣</span> Publicidad</h2>
+    <p>Los usuarios que no tienen la suscripción VIP pueden ver anuncios proporcionados por <strong>Google AdMob</strong>. Estos anuncios pueden usar el ID de publicidad de tu dispositivo para mostrar anuncios personalizados según las políticas de Google.</p>
+    <p>Puedes limitar los anuncios personalizados desde la configuración de tu dispositivo Android en <strong>Ajustes → Google → Anuncios</strong>.</p>
+    <p>Los usuarios VIP no ven ningún anuncio y el ID de publicidad no se utiliza para este propósito.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="section" id="delete">
+    <h2><span class="icon">🗑️</span> Eliminación de datos</h2>
+    <p>Tienes derecho a solicitar la eliminación completa de tus datos en cualquier momento.</p>
+
+    <div class="delete-box">
+      <h3>Cómo eliminar tus datos desde la app</h3>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Envía un email a <strong>luxuryvibe.ec@gmail.com</strong> con el asunto <em>"Solicitud de borrado de datos — HabitLoop"</em></p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Indica que deseas eliminar tu cuenta y todos tus datos asociados en HabitLoop</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Procesaremos tu solicitud y eliminaremos permanentemente tu ID anónimo y todos los datos en la nube en un plazo máximo de <strong>30 días</strong></p>
+      </div>
+
+      <p style="margin-top:16px; font-size:14px; color:#6b6b68;">
+        También puedes eliminar todos tus datos locales directamente desde la app en
+        <strong>Configuración → Eliminar todos los datos</strong>. Esto borra los datos del dispositivo de forma inmediata.
+      </p>
+    </div>
+
+    <p style="margin-top:16px;"><strong>Datos que se eliminan:</strong> historial de hábitos, metas, retos, amigos, nombre de usuario e ID anónimo de Firebase.</p>
+    <p><strong>Datos que se retienen:</strong> ninguno. La eliminación es permanente e irreversible.</p>
+    <p><strong>Periodo de retención tras la solicitud:</strong> máximo 30 días.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="section">
+    <h2><span class="icon">✉️</span> Contacto</h2>
+    <p>Si tienes preguntas, comentarios o solicitudes relacionadas con tu privacidad, contáctanos:</p>
+    <div class="contact-card">
+      <p><strong>HuroApps</strong></p>
+      <p>Email: <a href="mailto:luxuryvibe.ec@gmail.com">luxuryvibe.ec@gmail.com</a></p>
+      <p>App: HabitLoop (com.HuroApps.habitos)</p>
+      <p style="margin-top:16px; font-size:13px; color:#ffffff66;">Nos comprometemos a responder en un plazo de 30 días hábiles.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 HuroApps · HabitLoop · Todos los derechos reservados<br>
+  <span style="margin-top:6px; display:block;">Esta política puede actualizarse. La fecha de última revisión aparece en el encabezado de esta página.</span>
+</footer>
+
+</body>
+</html>
